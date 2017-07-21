@@ -11,6 +11,8 @@ if (!fs.existsSync('./coins/' + config.coin + '.json')) {
 
 var config = require('./config')
 
+var Database = require('./lib/database')
+    Database.init()
 var Tweety = require('./lib/tweety')
 var Router = require('./lib/router')
 var Utils  = require('./lib/utils')
