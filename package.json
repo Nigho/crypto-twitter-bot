@@ -1,0 +1,29 @@
+{
+  "name": "crypto-twitter-bot",
+  "version": "0.0.1",
+  "description": "A twitter bot used to interact with any cryptocurrencys network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "cryptocurrency",
+    "bitcoin",
+    "litecoin",
+    "dogecoin"
+  ],
+  "author": "Nigho",
+  "license": "MIT",
+  "dependencies": {
+    "ascii-art": "^1.4.2",
+    "bitcoin": "^3.0.1",
+    "colors": "^1.1.2",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "moment": "^2.18.1",
+    "satoshi-bitcoin": "^1.0.4",
+    "twit": "^2.2.9"
+  }
+}
