@@ -1,3 +1,14 @@
+var fs = require('fs')
+// Check if requiring files are working
+if (!fs.existsSync('./config.js')) {
+  console.error('config.js is missing - Please create a config file first')
+  process.exit()
+}
+if (!fs.existsSync('./coins/' + config.coin + '.json')) {
+  console.error('coins/' + config.coin + '.json is mssing - Please create a coin config file first')
+  process.exit()
+}
+
 var config = require('./config')
 
 var Tweety = require('./lib/tweety')
@@ -19,7 +30,7 @@ stream.on('tweet', function (tweet) {
   // Remove username from content
   var content = tweet.text.replace(user.name, '') // TODO: Check if unneeded
   // Check for coin address within content
-  var addr = content.match(Utils.AddrRegex())
+  var addrs = content.match(Utils.AddrRegex())
   // Filter command out of the content
   var cmd = Router.getCmd(content)
   if (cmd === 'tip') {
@@ -34,6 +45,15 @@ stream.on('tweet', function (tweet) {
     opt.name = '@' + tweet.entities.user_mentions[1].name
     opt.screen_name = tweet.entities.user_mentions[1].screen_name
     // Get amount (4 part of string)
+    opt.amount = parseFloat(content.split(' ')[3].trim())
+  }
+  if (cmd === 'withdraw') {
+    var opt = {
+      address: null,
+      amount: null
+    }
+    // Get address & amount
+    opt.address = addrs[0]
     opt.amount = parseFloat(content.split(' ')[3].trim())
   }
   // Execute command

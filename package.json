@@ -24,6 +24,7 @@
     "https": "^1.0.0",
     "moment": "^2.18.1",
     "satoshi-bitcoin": "^1.0.4",
-    "twit": "^2.2.9"
+    "twit": "^2.2.9",
+    "tingodb": "^0.5.1"
   }
 }

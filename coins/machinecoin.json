@@ -1,5 +1,6 @@
 {
   "name": "Machinecoin",
   "ticker": "MAC",
-  "prefix": "M"
+  "prefix": "M",
+  "txFee": 0.001
 }

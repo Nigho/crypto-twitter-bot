@@ -15,5 +15,6 @@ config.rpc = {
   pass: 'pass',
   port: 9332
 }
+config.storage = './storage' // Local database storage path
 
 module.exports = config
